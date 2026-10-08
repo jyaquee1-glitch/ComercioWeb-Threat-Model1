@@ -1,0 +1,29 @@
+{
+  "version": "2.6.2",
+  "release_version": "1.0",
+  "released_at": "2026-10-07",
+  "summary": {
+    "title": "ComercioWeb - Modelo de Amenazas",
+    "owner": "Jefferson Yaque",
+    "description": "ComercioWeb es una plataforma web de comercio electrónico que permite a clientes consultar productos, gestionar carritos, realizar pedidos y procesar pagos mediante un proveedor externo. La plataforma también incluye funciones administrativas, soporte, notificaciones y monitoreo de eventos de seguridad.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "DFD Nivel 0 - Contexto General",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": [],
+        "description": "Diagrama de contexto general de ComercioWeb, donde se representan los principales actores externos y la interacción general con la plataforma de comercio electrónico."
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
