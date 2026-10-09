@@ -40,6 +40,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -123,7 +124,6 @@
               ]
             },
             "id": "0889662d-ef41-4e0e-9cf5-7ae6ba5f5716",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Cliente",
@@ -157,6 +157,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -240,7 +241,6 @@
               ]
             },
             "id": "25910a2c-1261-40ef-ba4a-9abc5f706b3a",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Administrador",
@@ -391,6 +391,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -474,7 +475,6 @@
               ]
             },
             "id": "48b71419-2775-4572-aba8-4800948a191b",
-            "zIndex": 4,
             "data": {
               "type": "tm.Process",
               "name": "ComercioWeb",
@@ -511,6 +511,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -594,7 +595,6 @@
               ]
             },
             "id": "2716e0a0-697e-45fb-87c5-f867d42fa902",
-            "zIndex": 5,
             "data": {
               "type": "tm.Actor",
               "name": "Proveedor de pagos",
@@ -654,7 +654,7 @@
             },
             "vertices": [
               {
-                "x": 340,
+                "x": 350,
                 "y": 410
               }
             ]
