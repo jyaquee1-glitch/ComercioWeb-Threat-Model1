@@ -904,9 +904,19 @@
           }
         ],
         "description": "Diagrama de contexto general de ComercioWeb, donde se representan los principales actores externos y la interacción general con la plataforma de comercio electrónico."
+      },
+      {
+        "id": 3,
+        "title": "DFD Nivel 1 - Componentes principales",
+        "diagramType": "STRIDE",
+        "placeholder": "Descripción de nuevo diagrama STRIDE",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": [],
+        "description": "Diagrama de flujo de datos de nivel 1 de ComercioWeb, donde se representan los principales procesos internos, los almacenes de información, los actores y las dependencias externas, así como los flujos de datos entre ellos."
       }
     ],
-    "diagramTop": 2,
+    "diagramTop": 4,
     "reviewer": "",
     "threatTop": 0
   }
