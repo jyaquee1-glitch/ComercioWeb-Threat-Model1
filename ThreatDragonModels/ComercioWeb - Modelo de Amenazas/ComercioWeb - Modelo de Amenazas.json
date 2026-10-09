@@ -21,6 +21,41 @@
         "cells": [
           {
             "position": {
+              "x": 675,
+              "y": 124.99999999999989
+            },
+            "size": {
+              "width": 250,
+              "height": 170
+            },
+            "attrs": {
+              "label": {
+                "text": "Límite de confianza de ComercioWeb"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "325ffc3b-8074-4bb9-9ec2-7c8a6aa8bffe",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Límite de confianza de ComercioWeb",
+              "description": "Separa el entorno de la aplicación de los usuarios y sistemas externos. Las solicitudes que cruzan este límite deben autenticarse, autorizarse y validarse.",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "d56953f5-36be-4a59-91a2-8eb1e19544ea",
+                "34c972a8-8894-4e37-bb4b-c5cedab17998",
+                "be77cc57-4692-4326-8e1e-eafe35f2ca06",
+                "751d9c8d-1b90-4f30-bd90-86a6095b860e"
+              ],
+              "containedElements": [
+                "48b71419-2775-4572-aba8-4800948a191b"
+              ]
+            }
+          },
+          {
+            "position": {
               "x": 10,
               "y": 180
             },
@@ -638,7 +673,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "325ffc3b-8074-4bb9-9ec2-7c8a6aa8bffe"
+              ]
             },
             "labels": [
               "Solicitudes del cliente"
@@ -736,7 +773,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "325ffc3b-8074-4bb9-9ec2-7c8a6aa8bffe"
+              ]
             },
             "labels": [
               "Resultado del pago"
@@ -756,6 +795,112 @@
                 "y": 90
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Solicitudes administrativas",
+              "description": "Solicitudes HTTPS del administrador para gestionar usuarios, productos, pedidos y otras operaciones autorizadas de la plataforma.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "325ffc3b-8074-4bb9-9ec2-7c8a6aa8bffe"
+              ]
+            },
+            "labels": [
+              "Solicitudes administrativas"
+            ],
+            "id": "be77cc57-4692-4326-8e1e-eafe35f2ca06",
+            "source": {
+              "cell": "25910a2c-1261-40ef-ba4a-9abc5f706b3a",
+              "port": "48f3b067-12b6-4156-abcf-c8efe5a02cd0"
+            },
+            "target": {
+              "cell": "48b71419-2775-4572-aba8-4800948a191b",
+              "port": "b39b6bf4-100e-45f9-8c23-92618d8b20bb"
+            },
+            "vertices": [
+              {
+                "x": 380,
+                "y": 50
+              },
+              {
+                "x": 600,
+                "y": 50
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Solicitudes de soporte",
+              "description": "Solicitudes HTTPS del personal de soporte para consultar información de clientes y pedidos, y atender incidencias según los permisos asignados.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "325ffc3b-8074-4bb9-9ec2-7c8a6aa8bffe"
+              ]
+            },
+            "labels": [
+              "Solicitudes de soporte"
+            ],
+            "id": "751d9c8d-1b90-4f30-bd90-86a6095b860e",
+            "source": {
+              "x": 380,
+              "y": 240
+            },
+            "target": {
+              "cell": "48b71419-2775-4572-aba8-4800948a191b",
+              "port": "b39b6bf4-100e-45f9-8c23-92618d8b20bb"
+            }
           }
         ],
         "description": "Diagrama de contexto general de ComercioWeb, donde se representan los principales actores externos y la interacción general con la plataforma de comercio electrónico."
