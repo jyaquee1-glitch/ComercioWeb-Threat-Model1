@@ -704,6 +704,58 @@
               "cell": "2716e0a0-697e-45fb-87c5-f867d42fa902",
               "port": "cd7f185d-3e9f-454e-acd3-7cb85221c7f8"
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Resultado del pago",
+              "description": "Respuesta del proveedor externo que indica si la transacción fue aprobada, rechazada o quedó pendiente de confirmación.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Resultado del pago"
+            ],
+            "id": "34c972a8-8894-4e37-bb4b-c5cedab17998",
+            "source": {
+              "cell": "2716e0a0-697e-45fb-87c5-f867d42fa902",
+              "port": "48f3b067-12b6-4156-abcf-c8efe5a02cd0"
+            },
+            "target": {
+              "cell": "48b71419-2775-4572-aba8-4800948a191b",
+              "port": "7ebb0923-3ef1-4146-a40e-d0c5cc190874"
+            },
+            "vertices": [
+              {
+                "x": 1060,
+                "y": 90
+              }
+            ]
           }
         ],
         "description": "Diagrama de contexto general de ComercioWeb, donde se representan los principales actores externos y la interacción general con la plataforma de comercio electrónico."
