@@ -373,7 +373,7 @@
           {
             "position": {
               "x": 780,
-              "y": 220
+              "y": 165
             },
             "size": {
               "width": 120,
@@ -492,7 +492,7 @@
           },
           {
             "position": {
-              "x": 991,
+              "x": 1211,
               "y": 180
             },
             "size": {
@@ -627,8 +627,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
+              "name": "Solicitudes del cliente",
+              "description": "Solicitudes HTTPS para registro, autenticación, consulta de productos, gestión del carrito y realización de pedidos.",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -641,7 +641,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "Solicitudes del cliente"
             ],
             "id": "d56953f5-36be-4a59-91a2-8eb1e19544ea",
             "source": {
@@ -654,10 +654,56 @@
             },
             "vertices": [
               {
-                "x": 350,
-                "y": 410
+                "x": 450,
+                "y": 430
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Soli. de procesamiento de pago",
+              "description": "Información necesaria para procesar una transacción, enviada de forma segura desde ComercioWeb al proveedor externo de pagos.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Soli. de procesamiento de pago"
+            ],
+            "id": "393ecc19-342b-4bf4-abe6-7276752ddc80",
+            "source": {
+              "x": 900,
+              "y": 220
+            },
+            "target": {
+              "cell": "2716e0a0-697e-45fb-87c5-f867d42fa902",
+              "port": "cd7f185d-3e9f-454e-acd3-7cb85221c7f8"
+            }
           }
         ],
         "description": "Diagrama de contexto general de ComercioWeb, donde se representan los principales actores externos y la interacción general con la plataforma de comercio electrónico."
