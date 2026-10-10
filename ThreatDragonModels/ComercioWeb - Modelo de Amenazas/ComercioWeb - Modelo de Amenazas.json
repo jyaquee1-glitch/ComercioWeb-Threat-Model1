@@ -1047,8 +1047,8 @@
                 "text": "API ComercioWeb"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1145,12 +1145,99 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "e3087ce8-8555-47d2-afd4-19cf42364ba8",
+                  "title": "Suplantación de identidad en solicitudes a la API",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing / Spoofing",
+                  "description": "Un atacante podría enviar solicitudes a la API ComercioWeb utilizando una identidad falsa o credenciales comprometidas. Si la API no valida correctamente la identidad y los permisos del usuario en cada operación, el atacante podría acceder a funciones o información que no le corresponden.\nCopiar descripción",
+                  "mitigation": "Implementar autenticación robusta mediante OAuth 2.0 u OpenID Connect, validar los tokens de acceso y su vigencia, verificar los permisos en cada operación y aplicar controles de acceso por usuario y rol. Registrar los intentos de acceso fallidos y generar alertas ante patrones sospechosos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                },
+                {
+                  "id": "7aca27cd-8a02-4cd9-9423-12ffb16bd3b8",
+                  "title": "Manipulación no autorizada de solicitudes y datos en la API",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering / Manipulación",
+                  "description": "Un atacante podría modificar los parámetros o el contenido de las solicitudes enviadas a la API ComercioWeb para alterar operaciones del sistema. Si no se validan correctamente los datos y los permisos, podría modificar información de pedidos, manipular cantidades o precios enviados por el cliente, o intentar ejecutar operaciones no autorizadas.",
+                  "mitigation": "Validar los datos de entrada en el servidor, verificar la autorización para cada operación, calcular los precios y totales en el backend, impedir que el cliente establezca valores comerciales confiables y registrar los cambios importantes en pedidos y transacciones. Aplicar controles de integridad y pruebas de seguridad a la API.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "1fbc9c84-0dc2-45f2-8764-8b57f6e4ac1c",
+                  "title": "Falta de trazabilidad y evidencia de las operaciones realizadas en la API",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation / Repudiación",
+                  "description": "Si la API ComercioWeb no registra adecuadamente las operaciones realizadas, un usuario podría negar haber ejecutado una acción, como modificar un pedido o realizar una operación administrativa. La falta de registros completos y confiables dificultaría investigar incidentes y determinar quién realizó cada acción.",
+                  "mitigation": "Implementar registros de auditoría que incluyan la identidad del usuario, fecha y hora, operación ejecutada y resultado. Proteger los registros contra modificaciones y eliminación no autorizadas, sincronizar los relojes de los sistemas y centralizar los eventos relevantes en la plataforma SIEM.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "c0d7ea43-6c9e-442d-a134-20899b5b3e50",
+                  "title": "Exposición de información confidencial mediante la API",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure / Brecha de información",
+                  "description": "Un atacante podría obtener información confidencial a través de respuestas de la API ComercioWeb que no estén protegidas o filtradas correctamente. Esto podría exponer datos personales de clientes, información de pedidos o detalles internos del sistema, especialmente si existen errores de autorización o respuestas que incluyen datos innecesarios.",
+                  "mitigation": "Aplicar autorización en cada solicitud, limitar las respuestas a los datos necesarios, evitar incluir información sensible en mensajes de error, cifrar las comunicaciones mediante HTTPS y revisar los permisos de acceso a los datos personales y de pedidos. Registrar y monitorear los accesos sospechosos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                },
+                {
+                  "id": "0dc96be7-6246-4f4e-9236-39f383f5d1f2",
+                  "title": "Denegación de servicio contra la API ComercioWeb",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service / Denegación de servicio",
+                  "description": "Un atacante podría enviar un volumen excesivo de solicitudes a la API ComercioWeb o realizar peticiones que consuman muchos recursos, provocando lentitud o indisponibilidad de funciones como la consulta de productos, la gestión del carrito y la creación de pedidos. Esto podría afectar la disponibilidad de la plataforma para los usuarios legítimos.",
+                  "mitigation": "Aplicar límites de solicitudes por usuario e IP, configurar tiempos máximos de espera, limitar el tamaño de las peticiones, implementar controles de concurrencia y monitorear el consumo de recursos. Utilizar protección contra ataques de denegación de servicio cuando corresponda y generar alertas ante patrones anormales.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                },
+                {
+                  "id": "fc85da67-7975-4d98-8110-de25cc5d2294",
+                  "title": "Acceso a funciones administrativas sin autorización",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Elevation of privilege / Elevación de privilegios",
+                  "description": "Un usuario con privilegios limitados o un atacante que haya comprometido una cuenta podría intentar acceder a funciones administrativas de ComercioWeb. Si la API no verifica correctamente los permisos en cada operación, podría permitir la modificación de usuarios, productos o pedidos sin autorización, afectando la integridad y la seguridad de la plataforma.",
+                  "mitigation": "Aplicar control de acceso basado en roles (RBAC), verificar los permisos en el servidor para cada operación sensible, aplicar el principio de mínimo privilegio y separar las funciones administrativas de las operaciones de clientes. Registrar las acciones privilegiadas y generar alertas ante intentos de acceso no autorizado.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 2,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -1167,8 +1254,8 @@
                 "text": "Servicio de Autenticación"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1265,12 +1352,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "4fdce14f-945b-4049-9a38-b2b8bca385fe",
+                  "title": "Suplantación de identidad por autenticación insuficiente",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Spoofing / Spoofing",
+                  "description": "Un atacante podría intentar acceder a cuentas de clientes o administradores utilizando credenciales robadas, contraseñas débiles o mecanismos de autenticación insuficientes. Si el servicio no verifica adecuadamente la identidad del usuario, podría permitir accesos no autorizados a información y funciones de ComercioWeb.",
+                  "mitigation": "Aplicar políticas robustas de contraseñas, autenticación multifactor para cuentas administrativas y operaciones sensibles, protección contra intentos repetidos de inicio de sesión, gestión segura de sesiones y alertas ante accesos sospechosos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                },
+                {
+                  "id": "21a8349b-3336-459f-ad2b-8c929ca8641f",
+                  "title": "Robo o exposición de tokens de sesión",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering / Manipulación",
+                  "description": "Un atacante podría obtener un token de sesión mediante almacenamiento inseguro, transmisión sin protección o exposición accidental en registros. Si el token sigue siendo válido, podría utilizarlo para suplantar al usuario y acceder a las funciones de ComercioWeb sin conocer su contraseña.",
+                  "mitigation": "Transmitir los tokens únicamente mediante HTTPS, almacenarlos de forma segura, evitar incluirlos en registros o URL, establecer tiempos de expiración adecuados y permitir la revocación de sesiones. Aplicar cookies Secure, HttpOnly y SameSite cuando se utilicen cookies de sesión.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -1527,8 +1649,8 @@
                 "text": "Servicio de Pedidos"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1625,12 +1747,54 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "c3ce81aa-412f-4b13-8227-8bd83caeca37",
+                  "title": "Modificación no autorizada de pedidos",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing / Spoofing",
+                  "description": "Un atacante podría modificar los datos de un pedido sin autorización, alterando cantidades, productos, dirección de entrega o estado del pedido. Esto podría ocasionar pérdidas económicas, entregas incorrectas o inconsistencias en la información comercial.",
+                  "mitigation": "Validar en el servidor los cambios permitidos según el estado del pedido, verificar que el usuario sea propietario del pedido o tenga permisos administrativos, mantener controles de integridad y registrar las modificaciones en la auditoría.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                },
+                {
+                  "id": "c57fc3b2-514a-4cf8-b3c0-e30c9f43fb26",
+                  "title": "Acceso no autorizado a pedidos de otros clientes",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering / Manipulación",
+                  "description": "Un cliente podría consultar pedidos pertenecientes a otros usuarios si el Servicio de Pedidos no verifica correctamente la propiedad de cada pedido. Esto podría exponer nombres, direcciones de entrega, detalles de compras y otra información personal.",
+                  "mitigation": "Verificar en el servidor que cada usuario solo pueda consultar sus propios pedidos, salvo los roles autorizados. Aplicar controles de acceso en cada solicitud, evitar confiar en identificadores enviados por el cliente y realizar pruebas para comprobar que no se pueda acceder a pedidos ajenos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1777,6 +1941,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 8,
             "ports": {
               "groups": {
                 "top": {
@@ -1860,7 +2025,6 @@
               ]
             },
             "id": "ec39c77e-42cc-4a46-b87c-e423002b49d1",
-            "zIndex": 8,
             "data": {
               "type": "tm.Store",
               "name": "BD de Usuarios",
@@ -1901,6 +2065,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 9,
             "ports": {
               "groups": {
                 "top": {
@@ -1984,7 +2149,6 @@
               ]
             },
             "id": "17e29bd5-8ea1-4255-a268-ff3b10ef7399",
-            "zIndex": 9,
             "data": {
               "type": "tm.Store",
               "name": "BD de Comercio",
@@ -2025,6 +2189,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 10,
             "ports": {
               "groups": {
                 "top": {
@@ -2108,7 +2273,6 @@
               ]
             },
             "id": "17a1a819-8276-4561-a4e6-d1951555eaac",
-            "zIndex": 10,
             "data": {
               "type": "tm.Store",
               "name": "BD de Auditoría",
@@ -2920,6 +3084,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -3003,7 +3168,6 @@
               ]
             },
             "id": "5e76eea8-4215-4919-ae89-1fcc543ed655",
-            "zIndex": 11,
             "data": {
               "type": "tm.Actor",
               "name": "cliente",
@@ -3037,6 +3201,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 12,
             "ports": {
               "groups": {
                 "top": {
@@ -3120,7 +3285,6 @@
               ]
             },
             "id": "41ad030f-4e68-492c-bd01-9d6244c7a05e",
-            "zIndex": 12,
             "data": {
               "type": "tm.Actor",
               "name": "Administrador",
@@ -3154,6 +3318,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -3237,7 +3402,6 @@
               ]
             },
             "id": "06d4f352-3909-4d09-a207-cd32d39fcf3c",
-            "zIndex": 13,
             "data": {
               "type": "tm.Actor",
               "name": "Personal de soporte",
@@ -3271,6 +3435,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -3354,7 +3519,6 @@
               ]
             },
             "id": "ee1c9065-4c03-434c-a963-9c59d8868d7f",
-            "zIndex": 14,
             "data": {
               "type": "tm.Actor",
               "name": "Proveedor de pagos",
@@ -3388,6 +3552,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 15,
             "ports": {
               "groups": {
                 "top": {
@@ -3471,7 +3636,6 @@
               ]
             },
             "id": "ae11ef31-ee6c-4d90-b91b-7f2caa2d9d2c",
-            "zIndex": 15,
             "data": {
               "type": "tm.Actor",
               "name": "Servicio de Notificaciones",
@@ -3505,6 +3669,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 16,
             "ports": {
               "groups": {
                 "top": {
@@ -3588,7 +3753,6 @@
               ]
             },
             "id": "d327a688-21df-4c36-9ed1-1492f09673b4",
-            "zIndex": 16,
             "data": {
               "type": "tm.Actor",
               "name": "Plataforma SIEM",
@@ -4737,6 +4901,6 @@
     ],
     "diagramTop": 5,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 10
   }
 }
