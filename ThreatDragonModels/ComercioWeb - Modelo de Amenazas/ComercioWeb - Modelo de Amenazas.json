@@ -2003,8 +2003,8 @@
           },
           {
             "position": {
-              "x": 1069,
-              "y": 550
+              "x": 1015.75,
+              "y": 400
             },
             "size": {
               "width": 120,
@@ -3738,6 +3738,58 @@
               "cell": "2fb912aa-39a7-4486-9678-3015607cd4bf",
               "port": "dd71d66f-a9cd-449f-97f9-31c70d85b213"
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 20,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "f388bec2-e3d7-4a6a-be01-01a33d59ee45",
+            "source": {
+              "cell": "d7da3a28-6296-4cd0-8a7b-84d91568b75c",
+              "port": "dd71d66f-a9cd-449f-97f9-31c70d85b213"
+            },
+            "target": {
+              "cell": "17a1a819-8276-4561-a4e6-d1951555eaac",
+              "port": "6bf9cecf-b15c-44d8-ab58-2bc4fbed28a0"
+            },
+            "vertices": [
+              {
+                "x": 840,
+                "y": 390
+              }
+            ]
           }
         ],
         "description": "Diagrama de flujo de datos de nivel 1 de ComercioWeb, donde se representan los principales procesos internos, los almacenes de información, los actores y las dependencias externas, así como los flujos de datos entre ellos."
