@@ -3793,9 +3793,18 @@
           }
         ],
         "description": "Diagrama de flujo de datos de nivel 1 de ComercioWeb, donde se representan los principales procesos internos, los almacenes de información, los actores y las dependencias externas, así como los flujos de datos entre ellos."
+      },
+      {
+        "id": 4,
+        "title": "DFD Nivel 2 — Procesamiento de pagos",
+        "diagramType": "STRIDE",
+        "placeholder": "Descripción de nuevo diagrama STRIDE",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": []
       }
     ],
-    "diagramTop": 4,
+    "diagramTop": 5,
     "reviewer": "",
     "threatTop": 0
   }
