@@ -1409,8 +1409,8 @@
                 "text": "Servicio de Catálogo"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1507,12 +1507,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "dc6fb19f-f449-48f1-befc-158822e9f242",
+                  "title": "Modificación no autorizada del catálogo",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering / Manipulación",
+                  "description": "Un atacante podría modificar productos, precios o disponibilidad sin autorización, afectando la integridad de la información publicada.",
+                  "mitigation": "Validar permisos antes de modificar productos, aplicar controles de acceso por rol, validar los datos en el servidor y registrar los cambios realizados.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                },
+                {
+                  "id": "9e869483-6188-4b26-be09-a617f9277b86",
+                  "title": "Exposición de información del catálogo y datos internos",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure / Brecha de información",
+                  "description": "El servicio podría exponer información interna o datos que no deberían ser visibles para los clientes mediante consultas o respuestas de la API.",
+                  "mitigation": "Limitar los datos devueltos, validar permisos, evitar información sensible en las respuestas y manejar los errores de forma segura.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -1529,8 +1564,8 @@
                 "text": "Servicio de Carrito"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1627,12 +1662,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "ef5ea4ab-33b3-427d-9013-a3729ae1e40b",
+                  "title": "Manipulación del carrito de compras -",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering / Manipulación",
+                  "description": "Un atacante podría modificar cantidades, productos o precios enviados desde el cliente para alterar el importe de una compra.",
+                  "mitigation": "Calcular precios y totales en el servidor, validar cantidades y disponibilidad, y no confiar en valores enviados por el navegador.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                },
+                {
+                  "id": "13fb5576-414f-4dbe-9fda-662a41397574",
+                  "title": "Acceso al carrito de otro cliente",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure / Brecha de información",
+                  "description": "Un usuario podría consultar o modificar el carrito de otra persona si el sistema no verifica correctamente la propiedad de los recursos.",
+                  "mitigation": "Validar la identidad del usuario en cada solicitud, verificar la propiedad del carrito y aplicar controles de autorización en el servidor.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -1788,13 +1858,6 @@
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -4901,6 +4964,6 @@
     ],
     "diagramTop": 5,
     "reviewer": "",
-    "threatTop": 10
+    "threatTop": 14
   }
 }
